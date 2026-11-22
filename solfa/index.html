@@ -442,7 +442,7 @@ header .brand h1 span:nth-child(n){color:#ff4f9a!important}
 const SHOP = {
   price: '€4.99',
   gumroad: '',   // paste your Gumroad product link here, e.g. 'https://yourname.gumroad.com/l/solfa'
-  payhip:  '',   // paste your Payhip product link here, e.g. 'https://payhip.com/b/XXXX'
+  payhip:  'https://payhip.com/b/9w8EP',   // paste your Payhip product link here, e.g. 'https://payhip.com/b/XXXX'
   codes: ['f2d379f0'],  // hashed unlock codes (current code: see notes)
   freeLevels: 1,
 };
@@ -1730,7 +1730,7 @@ const isLocked = i => i>=SHOP.freeLevels && !S.unlocked;
 function renderPaywall(){
   const nLessons=LEVELS.slice(SHOP.freeLevels).reduce((a,l)=>a+l.lessons.length,0);
   const nSongs=LEVELS.slice(SHOP.freeLevels).reduce((a,l)=>a+l.melodies.length,0)+KIDS_EN.filter(k=>k.lvl>=SHOP.freeLevels).length;
-  const btn=(url,label)=> url ? `<a class="btn" href="${url}" target="_blank" rel="noopener">${label}</a>` : `<span class="btn ghost" style="opacity:.6">${label} · ${tx('link coming soon','sắp có link')}</span>`;
+  const btn=(url,label)=> url ? `<a class="btn" href="${url}" target="_blank" rel="noopener">${label}</a>` : '';
   $('payCard').innerHTML=`
     <div class="duo">${TINA}${OWL}</div>
     <h2>🔒 ${tx("Unlock Tina's full adventure","Mở khóa toàn bộ hành trình của Tina")}</h2>
